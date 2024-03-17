@@ -34,7 +34,6 @@ export const extensions = {
   audio: ["mp3", "wav", "ogg", "aac", "wma", "flac", "m4a"],
 };
 
-
 export const accepted_files = {
   "image/*": [
     ".jpg",
@@ -51,4 +50,21 @@ export const accepted_files = {
   ],
   "audio/*": [],
   "video/*": [],
+};
+
+export const MetaData = {
+  title: "Convertio - Simple & Fast Converter",
+  description: "Convert your images in Seconds!",
+  creator: "Sooraj-Rao",
+  keywords:
+    "image converter, video converter, audio converter, image converter, video converter, jpg to jpeg, png to jpeg, sooraj image converter",
+};
+
+export const HomeData = {
+  title: "Convertio -  Free Unlimited File Converter",
+  description: `Upgrade your images, audio, and videos effortlessly, without any limitations. Start converting now and unleash your creativity`,
+};
+
+export const MobileHomeData = {
+  description: `Convert your files in seconds!`,
 };

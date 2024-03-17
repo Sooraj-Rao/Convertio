@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";/
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import { MetaData, searchKeywords } from "@/utils/helper";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "SRJ - File Converter",
-  description: `Unleash your creativity with Modifio – the ultimate online tool for
-  unlimited and free multimedia conversion. Transform images, audio, and
-  videos effortlessly, without restrictions. Start converting now and
-  elevate your content like never before!`,
-  creator: "Sooraj-Rao",
-  keywords:
-    "image converter, video converter, audio converter, image converter, video converter, jpg to jpeg, png to jpeg ",
+  title: MetaData.title,
+  description: MetaData.description,
+  creator: MetaData.creator,
+  keywords: MetaData.keywords,
 };
 
 export default function RootLayout({
@@ -23,11 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div>
-          <Navbar/>
+      <head>
+      </head>
+      <body className={roboto.className}>
+        <div className=" sticky top-0">
+          <Navbar />
         </div>
-        <div>{children}</div>
+        <div className=" text-slate-800">{children}</div>
       </body>
     </html>
   );

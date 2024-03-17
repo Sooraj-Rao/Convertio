@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { extensions } from "./helper";
+import { extensions } from "../utils/helper";
 import { Action } from "@/types";
-import { accepted_files } from "./helper";
+import { accepted_files } from "../utils/helper";
 import { MdClose } from "react-icons/md";
 import ReactDropzone from "react-dropzone";
 import fileToIcon from "@/utils/file_to_icon";
@@ -184,7 +184,7 @@ const Dropzone = () => {
 
   if (actions.length) {
     return (
-      <div className="space-y-6">
+      <div className="space-y-6 sm:px-10">
         {actions.map((action: Action, i: any) => (
           <div
             key={i}
@@ -194,14 +194,14 @@ const Dropzone = () => {
               <Skeleton className="h-full w-full -ml-10 cursor-progress absolute rounded-xl" />
             )}
             <div className="flex gap-4 items-center">
-              <span className="text-2xl text-orange-600">
+              <span className="text-2xl text-slate-900">
                 {fileToIcon(action.file_type)}
               </span>
               <div className="flex items-center gap-1 w-96">
-                <span className="text-md font-medium overflow-x-hidden">
+                <span className="text-md  font-medium overflow-x-hidden">
                   {compressFileName(action.file_name)}
                 </span>
-                <span className="text-gray-400 text-sm">
+                <span className="text-gray-600 text-xs">
                   ({bytesToSize(action.file_size)})
                 </span>
               </div>
@@ -225,7 +225,7 @@ const Dropzone = () => {
                 </span>
               </Badge>
             ) : (
-              <div className="text-gray-400 text-md flex items-center gap-4">
+              <div className="text-gray-600  text-md flex items-center gap-4">
                 <span>Convert to</span>
                 <Select
                   onValueChange={(value) => {
@@ -239,10 +239,10 @@ const Dropzone = () => {
                   }}
                   value={selcted}
                 >
-                  <SelectTrigger className="w-32 outline-none focus:outline-none focus:ring-0 text-center text-gray-600 bg-gray-50 text-md font-medium">
+                  <SelectTrigger className="w-32 outline-none focus:outline-none focus:ring-0 border-2 border-gray-400 text-center text-gray-600 bg-gray-50 text-md font-medium">
                     <SelectValue placeholder="..." />
                   </SelectTrigger>
-                  <SelectContent className="h-fit">
+                  <SelectContent className="h-fit ">
                     {action.file_type.includes("image") && (
                       <div className="grid grid-cols-2 gap-2 w-fit">
                         {extensions.image.map((elt, i) => (
@@ -304,7 +304,7 @@ const Dropzone = () => {
               </div>
             )}
 
-            {action.is_converted ? (
+            {/* {action.is_converted ? (
               <Button variant="outline" onClick={() => download(action)}>
                 Download
               </Button>
@@ -315,15 +315,21 @@ const Dropzone = () => {
               >
                 <MdClose />
               </span>
-            )}
+            )} */}
+            <span
+              onClick={() => deleteAction(action)}
+              className="cursor-pointer hover:bg-gray-50 rounded-full h-10 w-10 flex items-center justify-center text-2xl hover:text-gray-700 text-gray-400"
+            >
+              <MdClose />
+            </span>
           </div>
         ))}
-        <div className="flex w-full justify-end">
+        <div className="flex w-full justify-center">
           {is_done ? (
-            <div className="space-y-4 w-fit">
+            <div className=" gap-x-5  flex items-center  justify-between">
               <Button
                 size="lg"
-                className="rounded-xl font-semibold relative py-4 text-md flex gap-2 items-center w-full"
+                className="rounded-xl  font-semibold relative py-4 text-md flex gap-2 items-center w-full"
                 onClick={downloadAll}
               >
                 {actions.length > 1 ? "Download All" : "Download"}
@@ -331,18 +337,17 @@ const Dropzone = () => {
               </Button>
               <Button
                 size="lg"
+                className="rounded-xl font-semibold relative py-4 text-md flex gap-2 items-center w-full"
                 onClick={reset}
-                variant="outline"
-                className="rounded-xl"
               >
-                Convert Another File(s)
+                Convert Another File
               </Button>
             </div>
           ) : (
             <Button
               size="lg"
               disabled={!is_ready || is_converting}
-              className="rounded-xl font-semibold relative py-4 text-md flex items-center w-44"
+              className="rounded font-semibold relative py-4 text-md flex items-center w-44"
               onClick={convert}
             >
               {is_converting ? (
@@ -385,31 +390,33 @@ const Dropzone = () => {
       }}
     >
       {({ getRootProps, getInputProps }) => (
-        <div
-          {...getRootProps()}
-          className=" bg-gray-50 h-72 lg:h-80 xl:h-96 rounded-3xl shadow-sm border-2 border-dashed cursor-pointer flex items-center justify-center"
-        >
-          <input {...getInputProps()} />
-          <div className="space-y-4 text-gray-500">
-            {is_hover ? (
-              <>
-                <div className="justify-center flex text-6xl">
-                  <LuFileSymlink />
-                </div>
-                <h3 className="text-center font-medium text-2xl">
-                  Yes, right there
-                </h3>
-              </>
-            ) : (
-              <>
-                <div className="justify-center flex text-6xl">
-                  <FiUploadCloud />
-                </div>
-                <h3 className="text-center font-medium text-2xl">
-                  Click, or drop your files here
-                </h3>
-              </>
-            )}
+        <div className=" flex justify-center sm:p-0 p-4">
+          <div
+            {...getRootProps()}
+            className="  sm:h-72 sm:w-96 h-40 w-[90%]   lg:h-60 shadow-xl shadow-slate-400   border-2 border-dashed cursor-pointer flex items-center justify-center"
+          >
+            <input {...getInputProps()} />
+            <div className="space-y-4 text-gray-500">
+              {is_hover ? (
+                <>
+                  <div className="justify-center flex text-6xl">
+                    <LuFileSymlink />
+                  </div>
+                  <h3 className="text-center font-medium text-2xl">
+                    Yes, right there
+                  </h3>
+                </>
+              ) : (
+                <>
+                  <div className="justify-center flex sm:text-6xl text-3xl">
+                    <FiUploadCloud />
+                  </div>
+                  <h3 className="text-center font-medium sm:text-2xl text-sm">
+                    Click, or drop your files here
+                  </h3>
+                </>
+              )}
+            </div>
           </div>
         </div>
       )}
