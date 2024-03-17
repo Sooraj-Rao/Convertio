@@ -57,7 +57,7 @@ export const MetaData = {
   description: "Convert your images in Seconds!",
   creator: "Sooraj-Rao",
   keywords:
-    "image converter, video converter, audio converter, image converter, video converter, jpg to jpeg, png to jpeg, sooraj image converter",
+    "image converter, video converter, audio converter, image converter, video converter, jpg to jpeg, png to jpeg, sooraj image converter,sooraj converter,sooraj converter vercel",
 };
 
 export const HomeData = {

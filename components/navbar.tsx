@@ -66,7 +66,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-export const Navigtion = ({ mobile }) => {
+export const Navigtion = ({ mobile }: any) => {
   return (
     <div className={`flex ${mobile && "flex-col"} `}>
       <Link href={"/"}>
