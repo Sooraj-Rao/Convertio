@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="sm:space-y-12 space-y-2 sm:px-32 px-4 text-md md:text-lg text-gray-500 pb-4 md:pb-8">
+    <div className="sm:space-y-12 space-y-2 sm:px-32 px-4 text-sm md:text-lg text-gray-500 pb-4 md:pb-8">
       <p>
         Introducing Convertio, the ultimate multimedia conversion powerhouse
         that empowers you to transform images, audio files, and videos with
@@ -8,7 +8,7 @@ export default function About() {
         limitations and hello to limitless creative possibilities.
       </p>
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className=" text-lg md:text-2xl font-medium text-gray-700">
           🖼️ Image Conversion:
         </h2>
         <p>
@@ -20,7 +20,7 @@ export default function About() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           🎵 Audio Transformation:
         </h2>
         <p>
@@ -32,7 +32,7 @@ export default function About() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           🎥 Video Metamorphosis:
         </h2>
         <p>
@@ -43,7 +43,7 @@ export default function About() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           🚀 Unlimited Usage, No Strings Attached:
         </h2>
         <p>
@@ -55,7 +55,7 @@ export default function About() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           🌐 Accessible Anywhere:
         </h2>
         <p>
@@ -66,7 +66,7 @@ export default function About() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           🔒 Secure and Private:
         </h2>
         <p>
@@ -77,7 +77,7 @@ export default function About() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           💡 User-Friendly Interface:
         </h2>
         <p>
@@ -88,7 +88,7 @@ export default function About() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           📈 Constantly Evolving:
         </h2>
         <p>
@@ -99,7 +99,7 @@ export default function About() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           🌟 It's Free, It's Powerful, It's 
           <span className=" pl-2  ">Convertio</span>
         </h2>

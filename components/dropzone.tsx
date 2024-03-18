@@ -184,7 +184,7 @@ const Dropzone = () => {
 
   if (actions.length) {
     return (
-      <div className="space-y-6 sm:px-10">
+      <div className="space-y-6 sm:px-10 mx-2 overflow-scroll  text-wrap">
         {actions.map((action: Action, i: any) => (
           <div
             key={i}
@@ -197,7 +197,7 @@ const Dropzone = () => {
               <span className="text-2xl text-slate-900">
                 {fileToIcon(action.file_type)}
               </span>
-              <div className="flex items-center gap-1 w-96">
+              <div className="flex items-start flex-col  gap-1 w-96">
                 <span className="text-md  font-medium overflow-x-hidden">
                   {compressFileName(action.file_name)}
                 </span>
@@ -225,7 +225,7 @@ const Dropzone = () => {
                 </span>
               </Badge>
             ) : (
-              <div className="text-gray-600  text-md flex items-center gap-4">
+              <div className="text-gray-600  sm:pt-0 pt-5 text-md flex items-center justify-between  sm:w-1/2 w-full  gap-4">
                 <span>Convert to</span>
                 <Select
                   onValueChange={(value) => {
@@ -242,9 +242,9 @@ const Dropzone = () => {
                   <SelectTrigger className="w-32 outline-none focus:outline-none focus:ring-0 border-2 border-gray-400 text-center text-gray-600 bg-gray-50 text-md font-medium">
                     <SelectValue placeholder="..." />
                   </SelectTrigger>
-                  <SelectContent className="h-fit ">
+                  <SelectContent className="h-fit  ">
                     {action.file_type.includes("image") && (
-                      <div className="grid grid-cols-2 gap-2 w-fit">
+                      <div className="grid grid-cols-2 gap-2 w-fit ">
                         {extensions.image.map((elt, i) => (
                           <div key={i} className="col-span-1 text-center">
                             <SelectItem value={elt} className="mx-auto">
@@ -301,32 +301,19 @@ const Dropzone = () => {
                     )}
                   </SelectContent>
                 </Select>
-              </div>
-            )}
-
-            {/* {action.is_converted ? (
-              <Button variant="outline" onClick={() => download(action)}>
-                Download
-              </Button>
-            ) : (
-              <span
-                onClick={() => deleteAction(action)}
-                className="cursor-pointer hover:bg-gray-50 rounded-full h-10 w-10 flex items-center justify-center text-2xl text-gray-400"
-              >
-                <MdClose />
-              </span>
-            )} */}
             <span
               onClick={() => deleteAction(action)}
               className="cursor-pointer hover:bg-gray-50 rounded-full h-10 w-10 flex items-center justify-center text-2xl hover:text-gray-700 text-gray-400"
             >
               <MdClose />
             </span>
+              </div>
+            )}
           </div>
         ))}
         <div className="flex w-full justify-center">
           {is_done ? (
-            <div className=" gap-x-5  flex items-center  justify-between">
+            <div className=" gap-x-5 gap-y-5  flex items-center sm:flex-row flex-col justify-between">
               <Button
                 size="lg"
                 className="rounded-xl  font-semibold relative py-4 text-md flex gap-2 items-center w-full"
@@ -337,7 +324,7 @@ const Dropzone = () => {
               </Button>
               <Button
                 size="lg"
-                className="rounded-xl font-semibold relative py-4 text-md flex gap-2 items-center w-full"
+                className="rounded-xl font-semibold relative py-4  text-md  flex gap-2 items-center w-full"
                 onClick={reset}
               >
                 Convert Another File
@@ -393,7 +380,7 @@ const Dropzone = () => {
         <div className=" flex justify-center sm:p-0 p-4">
           <div
             {...getRootProps()}
-            className="  sm:h-72 sm:w-96 h-40 w-[90%]   lg:h-60 shadow-xl shadow-slate-400   border-2 border-dashed cursor-pointer flex items-center justify-center"
+            className="  sm:h-72 sm:w-96 h-40 w-[90%]   lg:h-60 sm:shadow-xl shadow-none sm:shadow-slate-700   sm:border-2 border-dashed cursor-pointer flex items-center justify-center"
           >
             <input {...getInputProps()} />
             <div className="space-y-4 text-gray-500">
@@ -408,12 +395,18 @@ const Dropzone = () => {
                 </>
               ) : (
                 <>
-                  <div className="justify-center flex sm:text-6xl text-3xl">
+                  <div className="justify-center hidden  sm:flex sm:text-6xl text-3xl">
                     <FiUploadCloud />
                   </div>
-                  <h3 className="text-center font-medium sm:text-2xl text-sm">
+                  <h3 className="text-center sm:block hidden font-medium sm:text-2xl text-sm">
                     Click, or drop your files here
                   </h3>
+                  <Button
+                    className=" sm:hidden px-12 py-7 text-lg"
+                    variant={"default"}
+                  >
+                    Upload
+                  </Button>
                 </>
               )}
             </div>

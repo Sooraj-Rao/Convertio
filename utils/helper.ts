@@ -62,9 +62,7 @@ export const MetaData = {
 
 export const HomeData = {
   title: "Convertio -  Free Unlimited File Converter",
+  Mobdescription:
+    "Effortlessly convert your images, audio, and videos in seconds",
   description: `Upgrade your images, audio, and videos effortlessly, without any limitations. Start converting now and unleash your creativity`,
-};
-
-export const MobileHomeData = {
-  description: `Convert your files in seconds!`,
 };

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="sm:space-y-12 space-y-2 text-md md:text-lg sm:px-32 px-4 text-gray-500 pb-4 md:pb-8">
-      <p>Effective Date: Wed 20 March 2024</p>
+    <div className="sm:space-y-12 space-y-2 text-sm md:text-lg sm:px-32 px-4 text-gray-500 pb-4 md:pb-8">
+      <b>Effective Date: Wed 20 March 2024</b>
       <p>
         At Convertio, we are committed to safeguarding your privacy. This
         Privacy Policy outlines our practices regarding the collection, use, and
@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
         your data.
       </p>
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           1. Information We Collect
         </h2>
         <p>
@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           2. How We Use Your Information
         </h2>
         <p>
@@ -39,7 +39,7 @@ export default function PrivacyPolicy() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           3. Cookies and Tracking Technologies
         </h2>
         <p>
@@ -51,7 +51,7 @@ export default function PrivacyPolicy() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           4. Data Security
         </h2>
         <p>
@@ -63,7 +63,7 @@ export default function PrivacyPolicy() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           5. Third-Party Links
         </h2>
         <p>
@@ -76,7 +76,7 @@ export default function PrivacyPolicy() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           6. Children's Privacy
         </h2>
         <p>
@@ -89,7 +89,7 @@ export default function PrivacyPolicy() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           7. Changes to This Privacy Policy
         </h2>
         <p>
@@ -101,7 +101,7 @@ export default function PrivacyPolicy() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-xl md:text-2xl font-medium text-gray-700">
+        <h2 className="text-lg md:text-2xl font-medium text-gray-700">
           8. Contact Us
         </h2>
         <p>
